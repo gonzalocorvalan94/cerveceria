@@ -1,3 +1,7 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
+
 :root {
     --color-crema: #e6ded1;
     --color-azul: #273b52;
@@ -8,6 +12,10 @@
     --color-blanco-roto: #f7f5f0;
 }
 
+
+/* --- Configuración del Scroll --- */
+
+
 * {
     box-sizing: border-box;
 }
@@ -15,11 +23,27 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--color-blanco-roto);
 }
 
+a {
+    text-decoration: none;
+    color: var(--color-azul);
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ==========================================================================
+   2. NAVBAR
+   ========================================================================== */
+
 .navbar {
-    background-color: var(--color-crema);
-    padding: 25px;
+    background-color: var(--color-azul-oscuro);
+    padding: 20px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .navbar-items {
@@ -31,18 +55,29 @@ body {
     padding: 0;
 }
 
-a {
+.navbar a {
     text-decoration: none;
-    color: var(--color-azul);
+    color: var(--color-blanco-roto);
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
+.navbar a:hover {
+    color: var(--color-acento);
+}
+
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+
 .hero {
-    min-height: 80vh;
+    min-height: 100vh;
     color: var(--color-blanco-roto);
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./img/foto-hero.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(./img/foto-hero.webp);
     background-size: cover;
-    background-position: top;
+    background-position: center top;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,18 +86,20 @@ a {
     padding: 0 20px;
 }
 
-h1 {
-    font-family: Oswald, sans-serif;
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
     font-size: 3rem;
     color: var(--color-blanco-roto);
     margin-bottom: 10px;
 }
 
-p {
+.hero p {
     max-width: 600px;
     font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
     color: var(--color-blanco-roto);
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .btn-ver {
@@ -70,11 +107,235 @@ p {
     background-color: var(--color-acento);
     color: var(--color-blanco-roto);
     padding: 12px 24px;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
 }
 
 .btn-ver:hover {
     background-color: var(--color-acento-hover);
+}
+
+
+/* ==========================================================================
+   4. SECCIÓN CERVEZAS (CATÁLOGO)
+   ========================================================================== */
+
+.cervezas {
+    min-height: 100vh;
+    background-color: var(--color-crema);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.cervezas h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-azul-oscuro);
+    margin-bottom: 40px;
+}
+
+.cervezas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--color-blanco-roto);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-azul);
+    margin: 20px 15px 10px;
+}
+
+.card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: var(--color-azul-oscuro);
+    padding: 0 15px 20px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================================
+   5. SECCIÓN CONTACTO
+   ========================================================================== */
+
+.contacto {
+    min-height: 90vh;
+    background-color: var(--color-blanco-roto);
+    color: var(--color-azul-oscuro);
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.contacto-container {
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.contacto h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-azul-oscuro);
+    margin: 0;
+}
+
+.contacto-bajada {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--color-azul);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contacto-info {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-crema);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 20px 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.info-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    color: var(--color-acento-hover);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contacto-info p {
+    color: var(--color-azul-oscuro);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.contacto-botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-contacto {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    color: var(--color-blanco-roto);
+    background-color: var(--color-acento);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-contacto:hover {
+    background-color: var(--color-acento-hover);
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   6. SECCIÓN NOSOTROS
+   ========================================================================== */
+
+.nosotros {
+    min-height: 100vh;
+    background-color: var(--color-azul-oscuro);
+    color: var(--color-blanco-roto);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nosotros-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.nosotros-texto,
+.nosotros-imagen {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nosotros-texto h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-crema);
+    margin-bottom: 20px;
+}
+
+.nosotros-texto p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-blanco-roto);
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+.img-nosotros {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: contain;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid var(--color-borde);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }

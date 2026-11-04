@@ -10,16 +10,30 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Montserrat:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/jpeg" href="./img/favicon.jpg" />
     <title>Geiser - Cerveza Artesanal</title>
   </head>
   <body>
     <nav class="navbar">
-      <ul class="navbar-items">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#cervezas">Cervezas</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-      </ul>
+      <div class="navbar-container">
+        <a href="#inicio" class="navbar-logo">
+          <img src="./img/favicon.jpg" alt="Logo Geiser" class="logo-img" />
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+          
+        </button>
+
+        <ul class="navbar-items">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#cervezas">Cervezas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+        </ul>
+      </div>
     </nav>
 
     <section class="hero" id="inicio">
@@ -138,6 +152,21 @@
             final seco y refrescante.
           </p>
         </article>
+
+        <article class="card">
+          <img
+            src="./img/weizen.jpg"
+            alt="Cerveza Weizen Geiser"
+            class="card-img"
+          />
+          <h3>Scottish</h3>
+          <p>
+            Weizen de trigo, de color dorado y aspecto turbio, con aromas y
+            sabores característicos a banana y clavo de olor. De cuerpo suave,
+            espuma cremosa y amargor bajo, ofrece una experiencia refrescante y
+            fácil de disfrutar.
+          </p>
+        </article>
       </div>
     </section>
 
@@ -145,7 +174,8 @@
       <div class="contacto-container">
         <h2>Contactanos</h2>
         <p class="contacto-bajada">
-          ¿Querés hacer un pedido, consultar por barriles o pasarte a tomar algo? Escribinos o visítanos.
+          ¿Querés hacer un pedido, consultar por barriles o pasarte a tomar
+          algo? Escribinos o visítanos.
         </p>
 
         <div class="contacto-info">
@@ -153,7 +183,7 @@
             <span class="info-titulo">Dirección</span>
             <p>Necochea 219 - Tandil - Provincia de Buenos Aires</p>
           </div>
-          <div class="info-item" style="margin-top: 15px;">
+          <div class="info-item" style="margin-top: 15px">
             <span class="info-titulo">Horarios</span>
             <p>Miércoles a Domingo de 18:00 a 00:00 hs</p>
           </div>
@@ -185,11 +215,14 @@
         <div class="nosotros-texto">
           <h2>Sobre Nosotros</h2>
           <p>
-            Geiser es una marca de familia, con más de 20 años de experiencia elaborando cerveza artesanal 100% natural.
-            Cada estilo nace de la pasión por el detalle, el respeto por los procesos tradicionales y el compromiso con la calidad que nos define desde el primer día.
+            Geiser es una marca de familia, con más de 20 años de experiencia
+            elaborando cerveza artesanal 100% natural. Cada estilo nace de la
+            pasión por el detalle, el respeto por los procesos tradicionales y
+            el compromiso con la calidad que nos define desde el primer día.
           </p>
           <p>
-            Hay un estilo para cada momento y para cada persona. Pasá, descubrila y disfrutá de lo nuestro.
+            Hay un estilo para cada momento y para cada persona. Pasá,
+            descubrila y disfrutá de lo nuestro.
           </p>
         </div>
         <div class="nosotros-imagen">
@@ -201,5 +234,17 @@
         </div>
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <p class="footer-marca">Cerveza Geiser - Tandil</p>
+        <p class="footer-texto">Necochea 219 • Buenos Aires, Argentina</p>
+        <p class="footer-copy">
+          &copy; 2026 Geiser. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
   </body>
+
+  <script src="main.js"></script>
 </html>
